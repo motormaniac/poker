@@ -1,0 +1,3 @@
+class WORLD_CONSTANTS:
+    WIDTH = 800
+    HEIGHT = 600
