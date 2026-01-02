@@ -1,6 +1,27 @@
 import sys
 sys.path.append(".")
-from python.cards import Deck
+from python.cards import *
+
+class Hand:
+    def __init__(self, cards=[]):
+        self.cards:list[Card] = cards
+    
+    def add_card(self, card):
+        if len(self.cards) >= 5:
+            raise ValueError("Hand can only contain 5 cards")
+        self.cards.append(card)
+    
+    def __eq__(self, other):
+        if not isinstance(other, Hand):
+            return False
+        return set(self.cards) == set(other.cards)
+    
+    ############DO THIS PLEASE##############
+    def __lt__(self, other):
+        #TODO# PLEASE DO THIS!!!!
+        """Make it so that we can compare which hands are better than others"""
+        pass
+    ############DO THIS###############
 
 def count_ranks(hand):
     counts = {}
